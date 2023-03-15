@@ -1,27 +1,52 @@
 import React from 'react'
-import {MdOutlineFavorite} from 'react-icons/md'
-import './Navbar.css';
+import {MdFavorite, MdOutlineFavorite, MdOutlineFavoriteBorder, MdOutlinePersonOutline, MdOutlineShoppingCartCheckout} from 'react-icons/md'
+import {FaSearch} from 'react-icons/fa'
+import './navbar.css';
+import {Link} from 'react-router-dom'
+
 
 function Navbar() {
   return (
-    <nav className='Nav-conatiner'>
-        <div className='nav-center'>
-          <header className='logo-place'>
-            <h1 className='logo'>Clothing</h1>
-          </header>
-          <div >
-            <ul className='nav-items'>
-              <li>Home</li>
-              <li>Shop</li>
-              <li>Blog</li>
-              <li>About</li>
-              <li>Contact</li>
-              <li>Cart</li>
-            </ul>
+    <nav className='nav-container'>
+      <div className='wrapper'>
+        <div className='left'>
+          <div className='item'>
+            <Link className='link' to='/product/1'>Women</Link>
+          </div>
+          <div className='item'>
+            <Link className='link' to='/product/2'>Men</Link>
+          </div>
+          <div className='item'>
+            <Link className='link' to='/product/3'>Kids</Link>
           </div>
         </div>
-
-      
+        <div className='center'>
+          <Link className='link' to='/'>ClothingStore</Link>
+        </div>
+        <div className='right'>
+        <div className='item'>
+          <Link className='link' to='/'>Homepage</Link>
+        </div>
+        <div className='item'>
+          <Link className='link' to='/'>About</Link>
+        </div>
+        <div className='item'>
+          <Link className='link' to='/'>Contact</Link>
+        </div>
+        <div className='item'>
+          <Link className='link' to='/'>Store</Link>
+        </div>
+        <div className='icons'>
+          <FaSearch />
+          <MdOutlinePersonOutline />
+          <MdOutlineFavoriteBorder />
+          <div className='cartIcon'>
+          <MdOutlineShoppingCartCheckout />
+          <span>0</span>
+          </div>
+        </div>
+        </div>
+      </div>
     </nav>
   )
 }
