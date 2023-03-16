@@ -2,6 +2,7 @@
     height: calc(100vh - 80px);
     width: 100vw;
     position: relative;
+    overflow: hidden;
 }
 
 .slider-container {
@@ -27,7 +28,7 @@
    bottom: 100px;
    gap: 15px;
    margin: auto;
-   cursor: pointer;
+   
 }
 
 .slider-icons-icon {
@@ -38,4 +39,5 @@
     align-items: center;
     justify-content: center;
     color: #000000;
+    cursor: pointer;
 }
