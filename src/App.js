@@ -7,7 +7,6 @@ import Products from "./pages/Products/Products";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet
 } from "react-router-dom";
 import Footer from './components/Footer/Footer';
