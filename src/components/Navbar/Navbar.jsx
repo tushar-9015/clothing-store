@@ -1,5 +1,5 @@
 import React from 'react'
-import {MdFavorite, MdOutlineFavorite, MdOutlineFavoriteBorder, MdOutlinePersonOutline, MdOutlineShoppingCartCheckout} from 'react-icons/md'
+import { MdOutlineFavoriteBorder, MdOutlinePersonOutline, MdOutlineShoppingCartCheckout} from 'react-icons/md'
 import {FaSearch} from 'react-icons/fa'
 import './navbar.css';
 import {Link} from 'react-router-dom'
