@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MdOutlineFavoriteBorder, MdOutlinePersonOutline, MdOutlineShoppingCartCheckout} from 'react-icons/md'
 import {FaSearch} from 'react-icons/fa'
 import './navbar.css';
 import {Link} from 'react-router-dom'
+import Cart from '../Cart/Cart';
 
 
 function Navbar() {
+  const [open, setOpen] = useState(false)
   return (
     <nav className='nav-container'>
       <div className='nav-container-wrapper'>
         <div className='nav-container-wrapper-left'>
           <div className='nav-container-wrapper-item'>
-            <Link className='link' to='/product/1'>Women</Link>
+            <Link className='link' to='/products/1'>Women</Link>
           </div>
           <div className='nav-container-wrapper-item'>
-            <Link className='link' to='/product/2'>Men</Link>
+            <Link className='link' to='/products/2'>Men</Link>
           </div>
           <div className='nav-container-wrapper-item'>
-            <Link className='link' to='/product/3'>Kids</Link>
+            <Link className='link' to='/products/3'>Kids</Link>
           </div>
         </div>
         <div className='nav-container-wrapper-center'>
@@ -40,13 +42,14 @@ function Navbar() {
           <FaSearch />
           <MdOutlinePersonOutline />
           <MdOutlineFavoriteBorder />
-          <div className='nav-container-wrapper-right-cartIcon'>
+          <div className='nav-container-wrapper-right-cartIcon' onClick={() => setOpen(!open)}>
           <MdOutlineShoppingCartCheckout />
           <span>0</span>
           </div>
         </div>
         </div>
       </div>
+      {open && <Cart />}
     </nav>
   )
 }
