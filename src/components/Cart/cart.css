@@ -1,5 +1,6 @@
 .cart {
   position: absolute;
+  max-width: 300px;
   right: 20px;
   top: 80px;
   z-index: 999;
