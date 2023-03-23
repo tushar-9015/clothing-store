@@ -1,28 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './featuredProducts.css'
 import Card from '../Card/Card'
+import axios from 'axios'
+
 
 const FeaturedProducts = ( {type} ) => {
 
-const data = [
-{
-    id: 1,
-    img: "https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    img2: "https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    isNew: true,
-    title: "Long Sleeve Graphic T-Shirt",
-    oldPrice: 19,
-    price: 12,
-},
-{
-    id: 2,
-    img: "https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    isNew: true,
-    title: "Coat",
-    oldPrice: 19,
-    price: 12,
-}
-]
+
+const [data , setData] = useState([])
+
+useEffect(()=> {
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(process.env.REACT_APP_API_URL+ "/products",
+      {
+        headers: {
+          Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
+        },
+      })
+      console.log(res)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  fetchData();
+},[])
   return (
     <div className='featuredProducts'>
       <div className='featuredProducts-top'>
