@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import './product.css'
 import {TiShoppingCart} from 'react-icons/ti';
 import { MdBalance, MdOutlineFavoriteBorder } from 'react-icons/md'
+import useFetch from '../../hooks/useFetch';
+import { useParams } from 'react-router-dom';
 
 const Product = () => {
+  const id = useParams().id
   const [selectedImg, setSelectedImg] = useState(0)
   const [quantity, setQuantity] = useState(1)
 
-  const images = ['https://images.pexels.com/photos/14875251/pexels-photo-14875251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1','https://images.pexels.com/photos/6937675/pexels-photo-6937675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1']
-
+  const { data, loading, error } = useFetch(
+    `/products/`
+  )
   return (
     <div className='product'>
       <div className='product-left-side'>
