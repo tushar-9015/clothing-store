@@ -11,23 +11,25 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1)
 
   const { data, loading, error } = useFetch(
-    `/products/`
+    `/products/${id}?populate=*`
   )
   return (
     <div className='product'>
-      <div className='product-left-side'>
+      {loading ? ("loading") : (
+        <>
+        <div className='product-left-side'>
         <div className='product-left-side-Imgs'>
-        <img className='productImg' src={images[0]} alt='' onClick={e => setSelectedImg(0)} />
-        <img className='productImg' src={images[1]} alt='' onClick={e => setSelectedImg(1)} />  
+        <img className='productImg' src={process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img?.data?.attributes?.url} alt='' onClick={(e) => setSelectedImg("img")} />
+        <img className='productImg' src={process.env.REACT_APP_UPLOAD_URL + data?.attributes?.img2?.data?.attributes?.url} alt='' onClick={(e) => setSelectedImg("img2")} />  
         </div> 
       <div className='product-left-side-mainImg'>
-        <img className='productMainImg' src={images[selectedImg]} alt='' />
+        <img className='productMainImg' src={process.env.REACT_APP_UPLOAD_URL + data?.attributes[selectedImg]?.data?.attributes?.url} alt='' />
       </div>
       </div>
       <div className='product-right-side'>
-        <h1>title</h1>
-        <span className='productPrice'>$300</span>
-        <p>dsgfd ucnio, ghjkl fghjkl ghjklw whbedjnc hudncsi jnkm bdccdwbhnjkmlc ewbnm vbn vbnm hjksa fencwmciw uncd uhew asunaun ucudwnec ewnuwenf nuenueduwen nuwnuwn </p>
+      <h1>{data?.attributes?.title}</h1>
+      <span className="price">${data?.attributes?.price}</span>
+      <p>{data?.attributes?.desc}</p>
         <div className='product-right-side-productQuantity'>
           <button onClick={()=>setQuantity((prev) => prev === 1 ? 1 : prev-1)}>-</button>
           {quantity}
@@ -58,6 +60,9 @@ const Product = () => {
           <span>FAQ</span>
         </div>
       </div>
+      </>
+      )}
+      
     </div>
   )
 }
