@@ -4,11 +4,14 @@ import {TiShoppingCart} from 'react-icons/ti';
 import { MdBalance, MdOutlineFavoriteBorder } from 'react-icons/md'
 import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
+import { addToCart } from '../../redux/cartReducer';
+import { useDispatch } from 'react-redux';
 
 const Product = () => {
   const id = useParams().id
   const [selectedImg, setSelectedImg] = useState(0)
   const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch()
 
   const { data, loading, error } = useFetch(
     `/products/${id}?populate=*`
@@ -35,7 +38,18 @@ const Product = () => {
           {quantity}
           <button onClick={()=>setQuantity((prev) => prev+1)}>+</button>
         </div>
-        <button className='product-right-side-productQuantity-add'>
+        <button className='product-right-side-productQuantity-add'
+        onClick={() => 
+        dispatch(
+          addToCart({
+            id: data.id,
+            title: data.attributes.title,
+            desc: data.attributes.desc,
+            price: data.attributes.price,
+            img: data.attributes.img.data.attributes.url,
+            quantity,
+          })
+        )}>
           <TiShoppingCart/>ADD TO CART
         </button>
         <div className='product-right-side-productQuantity-link'>

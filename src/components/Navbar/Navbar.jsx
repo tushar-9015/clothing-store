@@ -4,10 +4,12 @@ import {FaSearch} from 'react-icons/fa'
 import './navbar.css';
 import {Link} from 'react-router-dom'
 import Cart from '../Cart/Cart';
+import { useSelector } from "react-redux";
 
 
 function Navbar() {
   const [open, setOpen] = useState(false)
+  const products = useSelector((state) => state.cart.products);
   return (
     <nav className='nav-container'>
       <div className='nav-container-wrapper'>
@@ -44,7 +46,7 @@ function Navbar() {
           <MdOutlineFavoriteBorder />
           <div className='nav-container-wrapper-right-cartIcon' onClick={() => setOpen(!open)}>
           <MdOutlineShoppingCartCheckout />
-          <span>0</span>
+          <span>{products.length}</span>
           </div>
         </div>
         </div>
