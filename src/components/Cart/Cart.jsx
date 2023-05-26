@@ -1,5 +1,5 @@
 import React from 'react'
-import './cart.css'
+import './cart.scss'
 import { MdDeleteOutline } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeItem, resetCart } from '../../redux/cartReducer'
@@ -40,22 +40,22 @@ const Cart = () => {
     <div className='cart'>
       <h1>Products in your cart</h1>
       {products?.map((item) => (
-        <div className='cart-item' key={item.id}>
+        <div className='item' key={item.id}>
           <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt='' />
-          <div className='cart-item-details'>
+          <div className='details'>
              <h1>{item.title}</h1>
              <p>{item.desc?.substring(0, 100)}</p>
-             <div className='cart-item-price'>{item.quantity} x ${item.price}</div>
+             <div className='price'>{item.quantity} x ${item.price}</div>
           </div>
-          <MdDeleteOutline className='cart-item-delete' onClick={()=>dispatch(removeItem(item.id))}/>
+          <MdDeleteOutline className='delete' onClick={()=>dispatch(removeItem(item.id))}/>
         </div>
       ))}
-      <div className='cart-item-total'>
+      <div className='total'>
         <span>SUBTOTAL</span>
         <span>{totalPrice()}</span>
       </div>
-      <button onClick={handlePayment} className='cart-cheackout-btn'>PROCEED TO CHECKOUT</button>
-      <span className='cart-reset'onClick={()=>dispatch(resetCart())}>
+      <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
+      <span className='reset'onClick={()=>dispatch(resetCart())}>
         RESET CART
       </span>
     </div>
