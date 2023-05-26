@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import { MdOutlineFavoriteBorder, MdOutlinePersonOutline, MdOutlineShoppingCartCheckout} from 'react-icons/md'
-import {FaSearch} from 'react-icons/fa'
 import './navbar.css';
 import {Link} from 'react-router-dom'
 import Cart from '../Cart/Cart';
+import Wishlist from '../Wishlist/Wishlist';
 import { useSelector } from "react-redux";
 
 
 function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState({cart: false, wishlist: false});
   const products = useSelector((state) => state.cart.products);
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
   return (
     <nav className='nav-container'>
       <div className='nav-container-wrapper'>
@@ -37,21 +38,25 @@ function Navbar() {
         <div className='nav-container-wrapper-item'>
           <Link className='link' to='/'>Contact</Link>
         </div>
-        <div className='nav-container-wrapper-item'>
-          <Link className='link' to='/'>Store</Link>
-        </div>
         <div className='nav-container-wrapper-right-icons'>
-          <FaSearch />
           <MdOutlinePersonOutline />
-          <MdOutlineFavoriteBorder />
-          <div className='nav-container-wrapper-right-cartIcon' onClick={() => setOpen(!open)}>
+          {/* wishlist-btn */}
+          <div className='nav-container-wrapper-fav-icon' onClick={() => setOpen({cart:false, wishlist: open.wishlist ? false : true})}>
+            <MdOutlineFavoriteBorder />
+            {/* <span>{wishlistItems.length}</span> */}
+          </div>
+
+            {/* cart-btn */}
+          <div className='nav-container-wrapper-right-cartIcon' onClick={() => setOpen({cart: open.cart ? false: true, wishlist:false})}>
           <MdOutlineShoppingCartCheckout />
           <span>{products.length}</span>
           </div>
         </div>
         </div>
       </div>
-      {open && <Cart />}
+      {/* {open && <Cart />} */}
+      {open.cart && <Cart /> }
+      {open.wishlist && <Wishlist /> }
     </nav>
   )
 }
