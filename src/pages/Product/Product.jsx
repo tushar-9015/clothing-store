@@ -99,7 +99,7 @@ const Product = () => {
                 )
               }
             >
-              <MdOutlineFavorite /> ADD TO CART
+              <MdOutlineFavorite /> ADD TO WISHLIST
             </button>
             </div>
             <div className="info">

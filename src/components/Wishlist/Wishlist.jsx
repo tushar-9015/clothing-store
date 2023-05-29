@@ -2,12 +2,27 @@ import React from 'react'
 import './wishlist.scss'
 import { MdDeleteOutline, MdOutlineShoppingCartCheckout } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../../redux/cartReducer'
+import { useParams } from 'react-router-dom';
 import { removeWishlistItem, resetWishlist } from '../../redux/wishlistReducer'
-import { makeRequest } from "../../makeRequest";
+import useFetch from '../../hooks/useFetch'
 
 const Wishlist = () => {
+    const id = useParams().id
     const dispatch = useDispatch()
+    let  data,  error , loading;
+     
+  ({data, loading, error} = useFetch(
+            `/products/${id}?populate=*`
+          ));
+    
     const wishlistItems = useSelector((state) => state.wishlist.wishlistItems)
+
+    const moveToCart = (item) => {
+       dispatch(addToCart({...item, quantity: 1}))
+       dispatch(removeWishlistItem(item.id))
+    
+  }
   return (
     
     <div className='wishlist'>
@@ -21,7 +36,7 @@ const Wishlist = () => {
                     <div className='price'></div> ${item.price}
                 </div>
                 <MdDeleteOutline className='delete' onClick={() => dispatch(removeWishlistItem(item.id))} />
-                <MdOutlineShoppingCartCheckout className='add-to-cart'/>
+                <MdOutlineShoppingCartCheckout className='add-to-cart' onClick={() => moveToCart(item)}/>
             </div>
         ))}
         <span className='reset' onClick={()=> dispatch(resetWishlist())}> RESET WISHLIST</span>

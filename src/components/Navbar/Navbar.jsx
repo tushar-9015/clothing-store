@@ -40,7 +40,7 @@ function Navbar() {
           {/* wishlist-btn */}
           <div className='icon' onClick={() => setOpen({cart:false, wishlist: open.wishlist ? false : true})}>
             <MdOutlineFavoriteBorder />
-            {/* <span>{wishlistItems.length}</span> */}
+            <span>{wishlistItems.length}</span>
           </div>
 
             {/* cart-btn */}
