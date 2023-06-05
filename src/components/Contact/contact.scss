@@ -1,7 +1,7 @@
 .contact{
     background-color: blue;
     color: white;
-    padding: 15px;
+    padding: 1em;
     display: flex;
     justify-content: center;
 
@@ -17,13 +17,13 @@
             justify-content: space-between;
         
             input{
-                padding: 10px;
+                padding: 1em;
                 border: none;
                 border-radius: 5px 0 0 5px;
             }
             
             button{
-                padding: 10px;
+                padding: 1em;
                 color: white;
                 background-color: #333;
                 border-radius: 0 5px 5px 0;
@@ -34,8 +34,8 @@
             .icons {
                 display: flex;
                 flex-direction: row;
-                gap: 10px;
-                margin-left: 10px;
+                gap: 1em;
+                margin-left: 1em;
             }
         }
         

@@ -21,24 +21,17 @@ function Navbar() {
           <div className='item'>
             <Link className='link' to='/products/2'>Men</Link>
           </div>
-          <div className='item'>
-            <Link className='link' to='/products/3'>Kids</Link>
-          </div>
         </div>
         <div className='center'>
           <Link className='link' to='/'>ClothingStore</Link>
         </div>
         <div className='right'>
-        <div className='item'>
-          <Link className='link' to='/'>Homepage</Link>
-        </div>
-        <div className='item'>
-          <Link className='link' to='/'>About</Link>
-        </div>
         <div className='icons'>
-          <MdOutlinePersonOutline />
+          <div className='icon'>
+            <MdOutlinePersonOutline />
+          </div>
           {/* wishlist-btn */}
-          <div className='icon' onClick={() => setOpen({cart:false, wishlist: open.wishlist ? false : true})}>
+          <div className='icon-wishlist' onClick={() => setOpen({cart:false, wishlist: open.wishlist ? false : true})}>
             <MdOutlineFavoriteBorder />
             <span>{wishlistItems.length}</span>
           </div>

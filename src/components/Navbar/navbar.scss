@@ -1,8 +1,11 @@
 .navbar {
-  height: 80px;
+  width: 100%;
+  margin: 0;
 
   .wrapper {
-    padding: 10px 30px;
+    min-height: 3em;
+    margin: 0 1.5em;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,30 +13,54 @@
     .item {
       display: flex;
       align-items: center;
-      font-size: 18px;
+      font-size: 1.2rem;
     }
 
     .left {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 2em;
     }
 
     .center {
-      font-size: 30px;
-      letter-spacing: 2px;
+      font-size: 2.5rem;
+      letter-spacing: 0.1em;
     }
 
     .right {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 2em;
 
       .icons {
         display: flex;
-        gap: 15px;
+        font-size: 1.2rem;
+        gap: 1.3em;
         color: #777;
         cursor: pointer;
+
+        .icon {
+          font-size: 1.4rem;
+        }
+
+        .icon-wishlist {
+          position: relative;
+        }
+
+        .icon-wishlist span {
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            background-color: rgb(56, 146, 243);
+            color: white;
+            position:absolute;
+            right: -10px;
+            top: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .icon-cart {
           position: relative;
@@ -58,5 +85,6 @@
     }
   }
 }
+
 
  

@@ -23,11 +23,11 @@ const Footer = () => {
             </div>
             <div className='item'>
                 <h1>About</h1>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium nulla nec risus ultricies scelerisque. Pellentesque luctus turpis eu luctus molestie. Vivamus dapibus quam quis ligula pellentesque posuere. Pellentesque bibendum ultrices dolor, at pulvinar nibh aliquet at. Pellentesque consequat ligula eget tortor pellentesque, sit amet varius augue fermentum. Donec porttitor, turpis sit amet rhoncus fringilla, felis ex bibendum nibh, ut semper nulla lorem vel lectus. Aenean id orci porttitor nisi rutrum eleifend. Mauris in elit mattis, pulvinar quam ut, sollicitudin tellus.</span>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium nulla nec risus ultricies scelerisque. Pellentesque e, sit amet mattis, pulvinar quam ut, sollicitudin tellus.</span>
             </div>
             <div className='item'>
                 <h1>Contact</h1>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium nulla nec risus ultricies scelerisque. Pellentesque luctus turpis eu luctus molestie. Vivamus dapibus quam quis ligula pellentesque posuere. Pellentesque bibendum ultrices dolor, at pulvinar nibh aliquet at. Pellentesque consequat ligula eget tortor pellentesque, sit amet varius augue fermentum. Donec porttitor, turpis sit amet rhoncus fringilla, felis ex bibendum nibh, ut semper nulla lorem vel lectus. Aenean id orci porttitor nisi rutrum eleifend. Mauris in elit mattis, pulvinar quam ut, sollicitudin tellus.</span>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium nulla nec risus ultricies scelerisque. Pellentesque luctus turpis eu luctus. Pellentesque bibendum ultrices dolor, at pulvinar nibh aliquet.</span>
             </div>
         </div>
         <div className='bottom'>

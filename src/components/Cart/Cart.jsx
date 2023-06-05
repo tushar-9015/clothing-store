@@ -26,14 +26,14 @@ const Cart = () => {
           <div className='details'>
              <h1>{item.title}</h1>
              <p>{item.desc?.substring(0, 100)}</p>
-             <div className='price'>{item.quantity } x ${item.price}</div>
+             <div className='price'>{item.quantity } x ₹{item.price}</div>
           </div>
           <MdDeleteOutline className='delete' onClick={()=>dispatch(removeItem(item.id))}/>
         </div>
       ))}
       <div className='total'>
         <span>SUBTOTAL</span>
-        <span>${totalPrice()}</span>
+        <span>₹{totalPrice()}</span>
       </div>
       <button >PROCEED TO CHECKOUT</button>
       <span className='reset'onClick={()=>dispatch(resetCart())}>

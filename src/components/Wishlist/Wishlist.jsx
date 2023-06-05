@@ -28,18 +28,18 @@ const Wishlist = () => {
     <div className='wishlist'>
         <h1>Products in your Wishlist</h1>
         {wishlistItems?.map((item) => (
-            <div className='item' key={item.id}>
+            <div className='wishlist-item' key={item.id}>
                 <img src={process.env.REACT_APP_UPLOAD_URL + item.img} alt='' />
-                <div className='details'>
+                <div className='wishlist-details'>
                     <h1>{item.title}</h1>
                     <p>{item.desc?.substring(0, 100)}</p>
-                    <div className='price'></div> ${item.price}
+                    <div className='wishlist-price'></div> ₹{item.price}
                 </div>
-                <MdDeleteOutline className='delete' onClick={() => dispatch(removeWishlistItem(item.id))} />
+                <MdDeleteOutline className='wishlist-delete' onClick={() => dispatch(removeWishlistItem(item.id))} />
                 <MdOutlineShoppingCartCheckout className='add-to-cart' onClick={() => moveToCart(item)}/>
             </div>
         ))}
-        <span className='reset' onClick={()=> dispatch(resetWishlist())}> RESET WISHLIST</span>
+        <span className='wishlist-reset' onClick={()=> dispatch(resetWishlist())}> RESET WISHLIST</span>
     </div>
   )
 }

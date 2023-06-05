@@ -1,14 +1,14 @@
 .categories {
     display: flex;
     height: 80vh;
-    gap: 10px;
-    margin: 10px;
+    gap: 1em;
+    margin: 1em;
   
     .col {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 1em;
     }
   
     .col-l {
@@ -18,7 +18,7 @@
     .row{
       flex:1;
       display: flex;
-      gap: 10px;
+      gap: 1em;
       position: relative;
       overflow: hidden;
   
