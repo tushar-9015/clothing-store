@@ -36,34 +36,36 @@
        font-size: 1.1rem;
        font-weight: 500;
 
-       p {
-        color: gray;
-        margin: 0.9em;
-        font-size: 0.8rem;
-       }
-
-       .wishlist-price {
-        color: #2879fe;
-    
-       }
   }
+
+  
+  .wishlist-details p {
+    color: gray;
+    margin: 0.5em 0;
+    font-size: 0.9rem;
+   }
+
+   .wishlist-price {
+    color: #2879fe;
+
+   }
   
   .wishlist-delete {
       color: red;
-      font-size: 30px;
+      font-size: 1.9rem;
       cursor: pointer;
   }
   
   .add-to-cart{
       color: green;
-      font-size: 30px;
+      font-size: 1.9rem;
       cursor: pointer;
   }
 
   
   .wishlist-reset{
       color:red;
-      font-size: 12px;
+      font-size: 0.9rem;
       cursor: pointer;
   }
       

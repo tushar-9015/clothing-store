@@ -33,7 +33,7 @@ const Wishlist = () => {
                 <div className='wishlist-details'>
                     <h1>{item.title}</h1>
                     <p>{item.desc?.substring(0, 100)}</p>
-                    <div className='wishlist-price'></div> ₹{item.price}
+                    <div className='wishlist-price'> ₹{item.price}</div>
                 </div>
                 <MdDeleteOutline className='wishlist-delete' onClick={() => dispatch(removeWishlistItem(item.id))} />
                 <MdOutlineShoppingCartCheckout className='add-to-cart' onClick={() => moveToCart(item)}/>
