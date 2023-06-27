@@ -6,7 +6,6 @@ import Cart from '../Cart/Cart';
 import Wishlist from '../Wishlist/Wishlist';
 import { useSelector } from "react-redux";
 
-
 function Navbar() {
   const [open, setOpen] = useState({cart: false, wishlist: false});
   const products = useSelector((state) => state.cart.products);
@@ -23,7 +22,7 @@ function Navbar() {
           </div>
         </div>
         <div className='center'>
-          <Link className='link' to='/'>ClothingStore</Link>
+          <Link className='link' to='/'>ClothesBE</Link>
         </div>
         <div className='right'>
         <div className='icons'>

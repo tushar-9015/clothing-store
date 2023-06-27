@@ -10,7 +10,7 @@ const Contact = () => {
         <div className='mail'>
             <input type='text' placeholder='Enter your e-mail...'/>
             <button>JOIN US</button>
-            <div className='icons'>
+            <div className='contact-icons'>
                 <TiSocialGooglePlus />
                 <TiSocialFacebook />
                 <TiSocialInstagram />

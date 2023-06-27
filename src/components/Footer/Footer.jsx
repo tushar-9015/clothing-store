@@ -30,9 +30,9 @@ const Footer = () => {
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium nulla nec risus ultricies scelerisque. Pellentesque luctus turpis eu luctus. Pellentesque bibendum ultrices dolor, at pulvinar nibh aliquet.</span>
             </div>
         </div>
-        <div className='bottom'>
-            <div className='left'>
-                <span className='logo'>ClothingStore</span>
+        <div className='footer-bottom'>
+            <div className='footer-left'>
+                <span className='logo'>ClothesBE</span>
                 <span className='copyright'>© Copyright 2023. All Rights Reserved</span>
             </div>
         </div>

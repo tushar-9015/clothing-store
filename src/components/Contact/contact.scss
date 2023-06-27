@@ -6,20 +6,22 @@
     justify-content: center;
 
     .wrapper {
-        width: 50%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 0.4em;
     
         .mail {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            
         
             input{
                 padding: 1em;
                 border: none;
                 border-radius: 5px 0 0 5px;
+                
             }
             
             button{
@@ -31,18 +33,28 @@
                 cursor: pointer;
             }
             
-            .icons {
+            .contact-icons {
                 display: flex;
-                flex-direction: row;
                 gap: 1em;
                 margin-left: 1em;
             }
         }
         
     
-    }
-    
-    
+    }   
     
 }
+
+@media only screen and (max-width: 670px) {
+    .wrapper span {
+      display: none;
+    }
+
+    .contact-icons {
+        display: flex;
+        margin: 1em;
+        gap: 0.4em;
+    }
+}
+
 

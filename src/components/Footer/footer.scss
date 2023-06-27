@@ -9,7 +9,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.8em;
+      gap: 1em;
       text-align: justify;
       font-size: 0.8rem;
 
@@ -25,12 +25,12 @@
     }
   }
 
-  .bottom {
+  .footer-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 2em;
-    .left {
+    .footer-left {
       display: flex;
       align-items: center;
 
@@ -46,6 +46,12 @@
         color: gray;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .footer {
+    margin: 2em ;
   }
 }
 
