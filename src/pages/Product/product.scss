@@ -1,6 +1,7 @@
 .product {
     padding: 1em 2em;
     display: flex;
+    width: 100%;
     gap: 3em;
   
     .left {
@@ -106,5 +107,24 @@
         border: 1px solid rgb(238, 237, 237);
       }
   
+    }
+  }
+
+
+
+
+  @media only screen and (max-width: 720px) {
+    .product {
+      padding: 1em 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .left .images {
+      display: none;
     }
   }
